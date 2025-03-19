@@ -54,7 +54,7 @@ module riscv_cpu_tb;
         #20 rst_n = 1;
 
         // Run for a while to observe the pipeline
-        #50000 $finish;
+        #1000 $finish;
     end
 
 endmodule

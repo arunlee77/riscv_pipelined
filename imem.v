@@ -20,73 +20,9 @@ module imem (
 
     // Initialize memory (for simulation purposes)
     initial begin
-	/*
-        // Instruction at 0x00: 00000293 (ADDI x5, x0, 0)
-        mem[0] = 8'h93;  // LSB
-        mem[1] = 8'h02;
-        mem[2] = 8'h00;
-        mem[3] = 8'h00;  // MSB
-        // Instruction at 0x04: 00000313 (ADDI x6, x0, 0)
-        mem[4] = 8'h13;
-        mem[5] = 8'h03;
-        mem[6] = 8'h00;
-        mem[7] = 8'h00;
-        // Instruction at 0x08: c00003b7 (LUI x7, 0xc0000)
-        mem[8] = 8'hb7;
-        mem[9] = 8'h03;
-        mem[10] = 8'h00;
-        mem[11] = 8'hc0;
-        // Instruction at 0x0c: 40038393 (ADDI x7, x7, 0x400)
-        mem[12] = 8'h93;
-        mem[13] = 8'h83;
-        mem[14] = 8'h03;
-        mem[15] = 8'h40;
-        // Instruction at 0x10: 00a00e13 (ADDI x28, x0, 0xa)
-        mem[16] = 8'h13;
-        mem[17] = 8'he0;
-        mem[18] = 8'h00;
-        mem[19] = 8'h0a;
-        // Instruction at 0x14: 03c2d263 (BLT x5, x28, 0x3c)
-        mem[20] = 8'h63;
-        mem[21] = 8'hd2;
-        mem[22] = 8'hc2;
-        mem[23] = 8'h03;
-        // Instruction at 0x18: 00030513 (MV x10, x6)
-        mem[24] = 8'h13;
-        mem[25] = 8'h05;
-        mem[26] = 8'h03;
-        mem[27] = 8'h00;
-        // Instruction at 0x1c: 00100593 (ADDI x11, x0, 1)
-        mem[28] = 8'h93;
-        mem[29] = 8'h05;
-        mem[30] = 8'h00;
-        mem[31] = 8'h01;
-        // Instruction at 0x20: 03c000ef (JAL x1, 0x3c)
-        mem[32] = 8'hef;
-        mem[33] = 8'h00;
-        mem[34] = 8'hc0;
-        mem[35] = 8'h03;
-        // Instruction at 0x24: 00050313 (MV x6, x10)
-        mem[36] = 8'h13;
-        mem[37] = 8'h03;
-        mem[38] = 8'h05;
-        mem[39] = 8'h00;
-        // Instruction at 0x5c: 00b50533 (ADD x10, x10, x11)
-        mem[92] = 8'h33;
-        mem[93] = 8'h05;
-        mem[94] = 8'hb5;
-        mem[95] = 8'h00;
-        // Instruction at 0x60: 00008067 (JALR x0, x1, 0)
-        mem[96] = 8'h67;
-        mem[97] = 8'h80;
-        mem[98] = 8'h00;
-        mem[99] = 8'h00;
-        // Fill remaining memory with NOPs (00000013)
-        for (i = 100; i < 1024; i = i + 1) begin
-            mem[i] = (i % 4 == 0) ? 8'h13 : 8'h00;
-        end
-	*/
-		$readmemh("pointers.mem", memory); // Pointer arithmetic
+	
+		//$readmemh("pointers.mem", memory);
+		$readmemh("rv32i.mem", memory);
 		byte_index = 0;
 
 		// Parse memory into bytes
